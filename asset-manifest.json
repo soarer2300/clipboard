@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/clipboard/static/css/main.b3264b85.css",
+    "main.js": "/clipboard/static/js/main.d8005b53.js",
+    "index.html": "/clipboard/index.html",
+    "main.b3264b85.css.map": "/clipboard/static/css/main.b3264b85.css.map",
+    "main.d8005b53.js.map": "/clipboard/static/js/main.d8005b53.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b3264b85.css",
+    "static/js/main.d8005b53.js"
+  ]
+}
