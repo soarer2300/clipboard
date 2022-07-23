@@ -41,8 +41,8 @@ const App = () => {
   };
 
   return (
-    <div className="flex items-center justify-center">
-      <div className="flex flex-col items-center justify-center w-[50%]">
+    <div className="flex items-center justify-center ">
+      <div className="flex flex-col items-center justify-center w-[75%] xl:w-[50%]">
         <h1 className="m-5 text-5xl">Clipboard</h1>
         <TodoForm
           handleSubmit={handleSubmit}
