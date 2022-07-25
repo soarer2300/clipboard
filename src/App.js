@@ -1,11 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TodoForm from "./Components/TodoForm";
 import TodoList from "./Components/TodoList";
 
 const App = () => {
+  const localTodos = JSON.parse(localStorage.getItem("todos")) || [];
+
   const [todo, setTodo] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(localTodos);
   const [editId, setEditId] = useState(0);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,11 +37,13 @@ const App = () => {
 
   const handleDelete = (id) => {
     const delTodo = todos.filter((to) => to.id !== id);
+    localStorage.removeItem(delTodo);
     setTodos([...delTodo]);
   };
 
   const handleEdit = (id) => {
     const editTodo = todos.find((i) => i.id === id);
+    localStorage.setItem("todo", JSON.stringify(editTodo));
     setTodo(editTodo.todo);
     setEditId(id);
   };
